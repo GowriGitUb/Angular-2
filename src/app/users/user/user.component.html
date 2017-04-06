@@ -1,0 +1,82 @@
+<h4>{{ title }}</h4>
+<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="login-box">
+					<div id="login-box-holder">
+						<div class="row">
+							<div class="col-xs-12">
+								<header id="login-header">
+									<div id="login-logo">										 
+									</div>
+								</header>
+								
+								<div id="login-box-inner" style="background-color:#CA9500;height: 743px;">																
+									<form [formGroup]="userForm" (ngSubmit)="saveUser(userForm.value)"
+										class="form-horizontal">
+                   <div>				  
+											
+										         <input formControlName="id" [(ngModel)]="user.id" type="hidden">                                                                                    
+                      
+                    </div>
+										<div class="input-group" style="display: table;">
+
+                          <label>First Name</label>
+											    <input formControlName="firstName" [(ngModel)]="user.firstName" id="firstName" class="form-control" placeholder="First Name"/>                                                                                           
+										</div>
+                    <div>
+                        <control-messages [control] = "userForm.controls.firstName" style="color: red;"></control-messages>
+                    </div>
+
+                    <div class="input-group" style="display: table;">
+                          <label>Last Name</label>
+											    <input formControlName="lastName" [(ngModel)]="user.lastName" id="lastName" class="form-control" placeholder="Last Name"/>                                                                                           
+										</div>
+                    <div>
+                        <control-messages [control] = "userForm.controls.lastName" style="color: red;"></control-messages>
+                    </div>
+
+                  	<div class="input-group" style="display: table;">
+                          <label>Username</label>
+											    <input formControlName="userName" id="userName" [(ngModel)]="user.userName" class="form-control" placeholder="Username"/>                                                                                           
+										</div>
+                    <div>
+                        <control-messages [control] = "userForm.controls.userName" style="color: red;"></control-messages>
+                    </div>
+
+                    <div class="input-group" style="display: table;">
+                          <label>Password</label>
+											    <input type="password" formControlName="password" [(ngModel)]="user.password" id="password" class="form-control" placeholder="Password"/>                                                                                           
+										</div>
+                    <div>
+                        <control-messages [control] = "userForm.controls.password" style="color: red;"></control-messages>
+                    </div>
+                    
+
+                    	<div class="input-group" style="display: table;">
+                          <label>Phone Number</label>
+											    <input formControlName="phoneNumber" [(ngModel)]="user.phoneNumber" id="phoneNumber" class="form-control" placeholder="Phone Number"/>                                                                                           
+										</div>
+                    <div>
+                        <control-messages [control] = "userForm.controls.phoneNumber" style="color: red;"></control-messages>
+                    </div>
+
+										<div class="row">
+											<div class="col-xs-6">
+												<input type="submit" [disabled]="!userForm.valid" class="btn btn-success col-xs-12" value="Save">
+                    </div>
+                      <div class="col-xs-6">										
+                        <input type="reset" class="btn btn-default col-xs-12" value="Reset">
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+		</div>
+				</div>
+			</div>
+	</div>
+
+
